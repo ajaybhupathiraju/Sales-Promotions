@@ -14,17 +14,38 @@ FROM
         AND events.promo_type = 'BOGOF'
         AND events.base_price > 500;
 
+output:
+
+product_name
+-------------------------------
+Atliq_Double_Bedsheet_set
+Atliq_waterproof_Immersion_Rod	
 
 2.	Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending order of store counts, allowing us to identify the cities with the highest store presence.The report includes two essential fields: city and store count, which will assist in optimizing our retail operations.
 
 Result Query:
 -------------
 SELECT 
-    city, COUNT(store_id)
+    city, COUNT(store_id) "No of stores"
 FROM
     dim_stores
 GROUP BY city
 ORDER BY COUNT(store_id) DESC;
+
+output:
+
+product_name   No of stores
+------------  --------------
+Bengaluru	10
+Chennai		8
+Hyderabad	7
+Coimbatore	5
+Visakhapatnam	5
+Madurai		4
+Mysuru		4
+Mangalore	3
+Trivandrum	2
+Vijayawada	2	
 
 3.	Generate a report that displays each campaign along with the total revenue generated before and after the campaign? The report includes three key fields: campaign_name, totaI_revenue(before_promotion), totaI_revenue(after_promotion). This report should help in evaluating the financial impact of our promotional campaigns. (Display the values in millions)
 
@@ -40,6 +61,21 @@ FROM
     fact_events events ON camp.campaign_id = events.campaign_id
 GROUP BY camp.campaign_name
 ORDER BY camp.campaign_name ASC;
+
+output:
+
+product_name   No of stores
+------------  --------------
+Bengaluru	10
+Chennai		8
+Hyderabad	7
+Coimbatore	5
+Visakhapatnam	5
+Madurai		4
+Mysuru		4
+Mangalore	3
+Trivandrum	2
+Vijayawada	2
 
 
 4.	Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign. Additionally, provide rankings for the categories based on their ISU%. The report will include three key fields: category, isu%, and rank order. This information will assist in assessing the category-wise success and impact of the Diwali campaign on incremental sales.

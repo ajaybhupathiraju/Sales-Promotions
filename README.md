@@ -6,7 +6,7 @@ Analyze Promotions and Provide Tangible Insights to Sales Director
 - [Data Sources](#data-sources)
 - [Tools](#Tools)
 - [Live Dashboard](#live-dashboard)
-- [SQL Report to Business Request](#answer-to-senior-executives)
+- [Generate SQL report to senior executives](#generate-sql-report-to-senior-executives)
 - [Recommendations](#recommendations)
 
 
@@ -23,6 +23,6 @@ An FMCG retailer giant with over 50 supermarkets in the southern region of India
 [View Live Dashobard](https://app.powerbi.com/view?r=eyJrIjoiZmQzOGJkNjYtMzcyYi00NWVkLTk4ZjktYmI0NzViMGNmMzJiIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9)
 
 
-### Answer To Senior Executives
+### Generate SQL report to senior executives
 
 ### Recommendations

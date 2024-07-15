@@ -23,7 +23,7 @@ An FMCG retailer giant with over 50 supermarkets in the southern region of India
 ## Exploratory Data Analysis
 
 ## Live Dashboard
-[View Live Dashobard](#https://app.powerbi.com/view?r=eyJrIjoiZmQzOGJkNjYtMzcyYi00NWVkLTk4ZjktYmI0NzViMGNmMzJiIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9)
+[View Live Dashobard](https://app.powerbi.com/view?r=eyJrIjoiZmQzOGJkNjYtMzcyYi00NWVkLTk4ZjktYmI0NzViMGNmMzJiIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9)
 
 
 ## Answer To Senior Executives

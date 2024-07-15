@@ -6,5 +6,6 @@ Analyze Promotions and Provide Tangible Insights to Sales Director
 - [Data Sources](#data-sources)
 - [Exploring data](#exploratory-data-analysis)
 - [Sales Promotions Dashboard](#dashboard)
+- [Answer ad-hoc-requests by senior executives](#ad-hoc-requests)
 - [Recommendations](#recommendations)
 - [Deployee model](#deployee-model)

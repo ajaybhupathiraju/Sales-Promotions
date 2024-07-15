@@ -5,26 +5,41 @@
 
 Result Query:
 -------------
-select distinct product_name from dim_products p join fact_events events
-	  on p.product_code = events.product_code and events.promo_type = "BOGOF" and events.base_price > 500;
+SELECT DISTINCT
+    product_name
+FROM
+    dim_products p
+        JOIN
+    fact_events events ON p.product_code = events.product_code
+        AND events.promo_type = 'BOGOF'
+        AND events.base_price > 500;
 
 
 2.	Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending order of store counts, allowing us to identify the cities with the highest store presence.The report includes two essential fields: city and store count, which will assist in optimizing our retail operations.
 
 Result Query:
 -------------
-select city,count(store_id) from dim_stores group by city
-	  order by count(store_id) desc;
-
+SELECT 
+    city, COUNT(store_id)
+FROM
+    dim_stores
+GROUP BY city
+ORDER BY COUNT(store_id) DESC;
 
 3.	Generate a report that displays each campaign along with the total revenue generated before and after the campaign? The report includes three key fields: campaign_name, totaI_revenue(before_promotion), totaI_revenue(after_promotion). This report should help in evaluating the financial impact of our promotional campaigns. (Display the values in millions)
 
 Result Query:
 -------------
-select camp.campaign_name,SUM(events.base_price*events.`quantity_sold(before_promo)`)"total revenue before promotions",
-SUM(events.base_price*events.`quantity_sold(after_promo)`)"total revenue after promotions"
-from dim_campaigns camp join fact_events events on camp.campaign_id = events.campaign_id
-GROUP BY camp.campaign_name order by camp.campaign_name ASC;
+SELECT 
+    camp.campaign_name,
+    SUM(events.base_price * events.`quantity_sold(before_promo)`) 'total revenue before promotions',
+    SUM(events.base_price * events.`quantity_sold(after_promo)`) 'total revenue after promotions'
+FROM
+    dim_campaigns camp
+        JOIN
+    fact_events events ON camp.campaign_id = events.campaign_id
+GROUP BY camp.campaign_name
+ORDER BY camp.campaign_name ASC;
 
 
 4.	Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign. Additionally, provide rankings for the categories based on their ISU%. The report will include three key fields: category, isu%, and rank order. This information will assist in assessing the category-wise success and impact of the Diwali campaign on incremental sales.
@@ -35,11 +50,20 @@ Result Query:
 ------------- 
 select s.category,s.ISU,ROW_NUMBER() OVER (ORDER BY s.ISU DESC)"Rank" from 
 (
-select product.category,
-ROUND((SUM(events.`quantity_sold(after_promo)`)-SUM(events.`quantity_sold(before_promo)`))/SUM(events.`quantity_sold(after_promo)`)*100,2)"ISU" from fact_events events join dim_campaigns camp on camp.campaign_id = events.campaign_id and camp.campaign_name = "Diwali"
-join dim_products product on product.product_code = events.product_code
-group by product.category
-order by ROUND((SUM(events.`quantity_sold(after_promo)`)-SUM(events.`quantity_sold(before_promo)`))/SUM(events.`quantity_sold(after_promo)`)*100,2) DESC
+SELECT 
+    product.category,
+    ROUND((SUM(events.`quantity_sold(after_promo)`) - SUM(events.`quantity_sold(before_promo)`)) / SUM(events.`quantity_sold(after_promo)`) * 100,
+            2) 'ISU'
+FROM
+    fact_events events
+        JOIN
+    dim_campaigns camp ON camp.campaign_id = events.campaign_id
+        AND camp.campaign_name = 'Diwali'
+        JOIN
+    dim_products product ON product.product_code = events.product_code
+GROUP BY product.category
+ORDER BY ROUND((SUM(events.`quantity_sold(after_promo)`) - SUM(events.`quantity_sold(before_promo)`)) / SUM(events.`quantity_sold(after_promo)`) * 100,
+        2) DESC
 )s;
 
  
@@ -47,10 +71,14 @@ order by ROUND((SUM(events.`quantity_sold(after_promo)`)-SUM(events.`quantity_so
 
 Result Query:
 -------------
-select product.category,
-product.product_name,
-(SUM(base_price*events.`quantity_sold(after_promo)`)-SUM(base_price*events.`quantity_sold(before_promo)`))/(SUM(base_price*events.`quantity_sold(before_promo)`))*100 "IR%" 
-from fact_events events join dim_products product on product.product_code = events.product_code
-group by product.category,product.product_name
-order by (SUM(base_price*events.`quantity_sold(after_promo)`)-SUM(base_price*events.`quantity_sold(before_promo)`))/(SUM(base_price*events.`quantity_sold(before_promo)`))*100 DESC
+SELECT 
+    product.category,
+    product.product_name,
+    (SUM(base_price * events.`quantity_sold(after_promo)`) - SUM(base_price * events.`quantity_sold(before_promo)`)) / (SUM(base_price * events.`quantity_sold(before_promo)`)) * 100 'IR%'
+FROM
+    fact_events events
+        JOIN
+    dim_products product ON product.product_code = events.product_code
+GROUP BY product.category , product.product_name
+ORDER BY (SUM(base_price * events.`quantity_sold(after_promo)`) - SUM(base_price * events.`quantity_sold(before_promo)`)) / (SUM(base_price * events.`quantity_sold(before_promo)`)) * 100 DESC
 LIMIT 5

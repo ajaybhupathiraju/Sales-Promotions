@@ -24,5 +24,5 @@ An FMCG retailer giant with over 50 supermarkets in the southern region of India
 
 
 ### Generate SQL report to senior executives
-
+[View SQL Queries](data/dim_campaigns.csv)
 ### Recommendations

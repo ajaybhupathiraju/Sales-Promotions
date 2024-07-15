@@ -6,7 +6,7 @@ Analyze Promotions and Provide Tangible Insights to Sales Director
 - [Data Sources](#data-sources)
 - [Tools](#Tools)
 - [Live Dashboard](#live-dashboard)
-- [Answer to senior executives](#answer-to-senior-executives)
+- [SQL Report to Business Request](#answer-to-senior-executives)
 - [Recommendations](#recommendations)
 
 

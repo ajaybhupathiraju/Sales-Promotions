@@ -119,3 +119,13 @@ FROM
 GROUP BY product.category , product.product_name
 ORDER BY (SUM(base_price * events.`quantity_sold(after_promo)`) - SUM(base_price * events.`quantity_sold(before_promo)`)) / (SUM(base_price * events.`quantity_sold(before_promo)`)) * 100 DESC
 LIMIT 5
+
+output:
+
+category        product_name       			Rank
+------------    ----------------------------------	-------
+Home Appliances	Atliq_waterproof_Immersion_Rod		266.1874
+Home Appliances	Atliq_High_Glo_15W_LED_Bulb		262.9836
+Home Care	Atliq_Double_Bedsheet_set		258.2679
+Home Care	Atliq_Curtains				255.3354
+Combo1	        Atliq_Home_Essential_8_Product_Combo	183.3311

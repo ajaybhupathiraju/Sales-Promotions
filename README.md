@@ -28,12 +28,4 @@ An FMCG retailer giant with over 50 supermarkets in the southern region of India
 
 ### Recommendations
 As per data analysis, it clearly shows "Personal Care" products have weak in total revenues and quantities sold, even though we have given a 25% and 50% offer.
-i will provide 2 recommendations :
-
-Long term :
-Maybe competitors offer 
-1. Better quality products in the same category with lower prices. 
-2. Focus on marketing strategies like ads and promotions etc.
-
-Short term:
-1. Use cashback / Buy 1, Get 1 Free offers
+Use cashback / Buy 1, Get 1 Free offers.

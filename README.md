@@ -28,5 +28,4 @@ An FMCG retailer giant with over 50 supermarkets in the southern region of India
 [View Queries](data/sql_queries.sql)
 
 ### Recommendations
-As per data analysis, it clearly shows "Personal Care" products have weak in total revenues and quantities sold, even though we have given a 25% and 50% offer.
-apply cashback offer to the rest of stores which might increase the revenues.
+As per data analysis, apply cashback offer to the rest of stores which might increase the revenues.

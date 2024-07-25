@@ -20,7 +20,7 @@ An FMCG retailer giant with over 50 supermarkets in the southern region of India
 - Power BI | Python | SQL
 
 ### Live Dashboard
-[View Live Dashobard](https://app.powerbi.com/view?r=eyJrIjoiZmQzOGJkNjYtMzcyYi00NWVkLTk4ZjktYmI0NzViMGNmMzJiIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9) [Presentation Vedio](https://www.youtube.com/watch?v=RqTbvKxGbfc&t=159s)
+[View Live Dashobard](https://app.powerbi.com/view?r=eyJrIjoiZmQzOGJkNjYtMzcyYi00NWVkLTk4ZjktYmI0NzViMGNmMzJiIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9)               [Presentation Vedio](https://www.youtube.com/watch?v=RqTbvKxGbfc&t=159s)
 
 
 ### Generate SQL report to senior executives
